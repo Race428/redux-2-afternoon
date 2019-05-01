@@ -7,6 +7,7 @@ import DisplayPurchases from './../shared/DisplayPurchases';
 import Loading from './../shared/Loading/Loading';
 import Nav from './../shared/Nav';
 import './Budget.css';
+import { connect } from 'react-redux'
 
 
 class Budget extends Component {
@@ -32,5 +33,10 @@ class Budget extends Component {
     )
   }
 }
+function mapStateToProps (state){
+  return {
+    budget: state.budget
+  }
+}
 
-export default Budget;
+export default connect(mapStateToProps)(Budget);
